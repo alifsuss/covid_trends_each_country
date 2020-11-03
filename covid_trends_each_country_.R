@@ -13,7 +13,7 @@ df <- as_tibble(df)
 today.date = Sys.Date()
 
 #THIS "ID" IS THE SELECTOR, CHANGE IT TO ANY 2 LETTER COUNTRY CODE, 
-df_id <- df %>% filter(str_detect(geoId, "ID"))
+df_id <- df %>% filter(str_detect(geoId, "US"))
 df_id <- as_tibble(df_id)
 
 df_id %<>% 
@@ -56,7 +56,7 @@ df_id %>%
   + geom_col(aes(y = deaths, color = "red"), size = 1, fill = "white") %>%
   + geom_line(aes(y = death7, color = "blue"), size = 3, group=1) %>%
   #Change the title if you want
-  + ggtitle(paste('INDONESIA COVID-19 trends on', today.date, sep = " ")) %>%
+  + ggtitle(paste('U.S.A COVID-19 trends on', today.date, sep = " ")) %>%
   + theme(
     axis.line = element_line(size = 1),
     axis.text=element_text(size=17),
@@ -78,7 +78,7 @@ df_id %>%
   + geom_col(aes(y = cases, color = "darkorange"), size = 1, fill = "white") %>%
   + geom_line(aes(y = ave7, color = "blue"), size = 3, group=1) %>%
   #Change the title if you want
-  + ggtitle(paste('INDONESIA COVID-19 trends on', today.date, sep = " ")) %>%
+  + ggtitle(paste('U.S.A COVID-19 trends on', today.date, sep = " ")) %>%
   + theme(
     axis.line = element_line(size = 1),
     axis.text=element_text(size=17),
